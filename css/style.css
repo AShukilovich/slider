@@ -13,6 +13,8 @@ body {
   margin-right: auto;
   margin-left: auto;
   width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .row {
@@ -101,8 +103,11 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding-top: 15vh;
-  padding-bottom: 15vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
 }
 
 #header1-0 .swiper-slide::before {
@@ -117,27 +122,25 @@ img {
 }
 
 .wrap-img {
-  -webkit-box-flex: 0 0 40%;
-  -ms-flex: 0 0 40%;
-    flex: 0 0 40%;
-  max-width: 40%;
+  -webkit-box-flex: 0 0 70%;
+  -ms-flex: 0 0 70%;
+    flex: 0 0 70%;
+  max-width: 70%;
 }
 
-.wrap-img-right img {
-  -webkit-box-flex: 0 0 100%;
-  -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
-  max-width: 100%;
+.link-button {
+  margin-top: 20px;
 }
 
-.wrap-button {
-  margin: 20px auto 0; 
-  padding-left: 50px;
+.wrap-img-med {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
 }
 
 button {
   color: #fff;
-  padding: 10px 40px;
+  padding: 10px 15px;
   font-size: 15px;
   background: #d0351d;
   margin: 0;
@@ -155,14 +158,20 @@ button:focus {
 
 .swiper-button-next {
   top: 50%;
-  margin-top: -300px;
-  right: 300px;
+  margin-top: -15px;
+  right: 5%;
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
-  background-size: 300px;
-  width: 300px;
-  height: 600px;
+  background-size: 30px;
+  width: 30px;
+  height: 60px;
+  animation: move 3s infinite ease-in-out;
 }
 
+@keyframes move {
+  50% {
+    transform: translateX(10px);
+  }
+}
 
 @media (min-width: 576px) {
 
@@ -178,16 +187,40 @@ button:focus {
   button {
     font-size: 18px;
   }
+
+  .wrap-img {
+    -webkit-box-flex: 0 0 60%;
+    -ms-flex: 0 0 60%;
+      flex: 0 0 60%;
+    max-width: 60%;
+  }
+
+  .swiper-button-next {
+    margin-top: -100px;
+    right: 5%;
+    background-size: 100px;
+    width: 100px;
+    height: 200px;
+  }
 }
 
 @media (min-width: 768px) {
   .container {max-width: 720px;}
+
   .col-sm-6 {
     -webkit-box-flex: 0 0 60%;
       -ms-flex: 0 0 60%;
         flex: 0 0 60%;
     max-width: 60%;
   }
+
+  .wrap-img {
+    -webkit-box-flex: 0 0 40%;
+    -ms-flex: 0 0 40%;
+      flex: 0 0 40%;
+    max-width: 40%;
+  }
+
   button {
     color: #fff;
     padding: 15px 30px;
@@ -201,5 +234,24 @@ button:focus {
 
 @media (min-width: 1200px) {
   .container {max-width: 1170px;}
+
+  .wrap-button {
+    margin: 20px auto 0; 
+    padding-left: 50px;
+  }
+
+  button {
+    padding: 10px 40px;
+    font-size: 15px;
+  }
+
+  .swiper-button-next {
+    top: 50%;
+    margin-top: -300px;
+    right: 10%;
+    background-size: 300px;
+    width: 300px;
+    height: 600px;
+  }
 }
 
