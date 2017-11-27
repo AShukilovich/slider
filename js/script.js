@@ -1,8 +1,9 @@
-var swiperhome = new Swiper('.swiper-container', {
+var swiperhome = new Swiper('#header-presentation .swiper-container', {
     slidesPerView: 1,
     centeredSlides: true,
     loop: true,
     navigation: {
-        nextEl: '.swiper-button-next',
+        prevEl: '#header-presentation .swiper-button-prev',
+        nextEl: '#header-presentation .swiper-button-next',
     },
 });
